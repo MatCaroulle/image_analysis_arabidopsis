@@ -1,0 +1,67 @@
+﻿LINE;PLANT;RADIUS;METHOD
+lhp 1-3;5;9.601146578;Computer
+lhp 1-3;6;11.91257468;Computer
+lhp 1-3;32;8.656093921;Computer
+lhp 1-3;5;8.43;Hand
+lhp 1-3;6;11.46;Hand
+lhp 1-3;32;11.54;Hand
+trb 1-2 lhp 1-3;12;7.037129824;Computer
+trb 1-2 lhp 1-3;21;10.21649222;Computer
+trb 1-2 lhp 1-3;29;11.93275426;Computer
+trb 1-2 lhp 1-3;12;8.02;Hand
+trb 1-2 lhp 1-3;21;9.25;Hand
+trb 1-2 lhp 1-3;29;6.91;Hand
+trb 1-2 lhp 1-3/4;10;12.59036621;Computer
+trb 1-2 lhp 1-3/4;17;5.090722058;Computer
+trb 1-2 lhp 1-3/4;22;6.603745051;Computer
+trb 1-2 lhp 1-3/4;10;9.32;Hand
+trb 1-2 lhp 1-3/4;17;7.53;Hand
+trb 1-2 lhp 1-3/4;22;6.95;Hand
+trb 1-2 trb 2-3 lhp 1-3;3;9.934029284;Computer
+trb 1-2 trb 2-3 lhp 1-3;4;6.674153856;Computer
+trb 1-2 trb 2-3 lhp 1-3;9;7.848943102;Computer
+trb 1-2 trb 2-3 lhp 1-3;34;7.410162624;Computer
+trb 1-2 trb 2-3 lhp 1-3;3;5.9;Hand
+trb 1-2 trb 2-3 lhp 1-3;4;6.98;Hand
+trb 1-2 trb 2-3 lhp 1-3;9;6.05;Hand
+trb 1-2 trb 2-3 lhp 1-3;34;6.06;Hand
+trb 1-2 trb 2-3 lhp 1-3/4;11;10.58268604;Computer
+trb 1-2 trb 2-3 lhp 1-3/4;13;6.138725681;Computer
+trb 1-2 trb 2-3 lhp 1-3/4;18;7.068351423;Computer
+trb 1-2 trb 2-3 lhp 1-3/4;30;7.713781536;Computer
+trb 1-2 trb 2-3 lhp 1-3/4;11;6.37;Hand
+trb 1-2 trb 2-3 lhp 1-3/4;13;5.83;Hand
+trb 1-2 trb 2-3 lhp 1-3/4;18;6;Hand
+trb 1-2 trb 2-3 lhp 1-3/4;30;6;Hand
+trb 1-2 trb 3-2 lhp 1-3;1;6.232078785;Computer
+trb 1-2 trb 3-2 lhp 1-3;15;12.53674571;Computer
+trb 1-2 trb 3-2 lhp 1-3;25;6.5089986;Computer
+trb 1-2 trb 3-2 lhp 1-3;31;9.253329152;Computer
+trb 1-2 trb 3-2 lhp 1-3;1;8.31;Hand
+trb 1-2 trb 3-2 lhp 1-3;15;6.33;Hand
+trb 1-2 trb 3-2 lhp 1-3;25;10.84;Hand
+trb 1-2 trb 3-2 lhp 1-3;31;7.72;Hand
+trb 2-3 lhp 1-3/4;7;8.508718117;Computer
+trb 2-3 lhp 1-3/4;16;6.486111678;Computer
+trb 2-3 lhp 1-3/4;19;7.060534976;Computer
+trb 2-3 lhp 1-3/4;7;10.89;Hand
+trb 2-3 lhp 1-3/4;16;10.82;Hand
+trb 2-3 lhp 1-3/4;19;11.06;Hand
+trb 2-3 lhp 1-4;2;2.074416115;Computer
+trb 2-3 lhp 1-4;14;2.727233616;Computer
+trb 2-3 lhp 1-4;27;8.559463987;Computer
+trb 2-3 lhp 1-4;2;8.81;Hand
+trb 2-3 lhp 1-4;14;11.18;Hand
+trb 2-3 lhp 1-4;27;9.94;Hand
+trb 3-1 lhp 1-3;20;6.941730037;Computer
+trb 3-1 lhp 1-3;26;7.781443528;Computer
+trb 3-1 lhp 1-3;28;4.898029816;Computer
+trb 3-1 lhp 1-3;20;7.94;Hand
+trb 3-1 lhp 1-3;26;6.6;Hand
+trb 3-1 lhp 1-3;28;6.21;Hand
+trb 3-2 lhp 1-3;8;9.387559954;Computer
+trb 3-2 lhp 1-3;23;10.45015138;Computer
+trb 3-2 lhp 1-3;24;10.93159587;Computer
+trb 3-2 lhp 1-3;8;3.07;Hand
+trb 3-2 lhp 1-3;23;6.07;Hand
+trb 3-2 lhp 1-3;24;4.24;Hand

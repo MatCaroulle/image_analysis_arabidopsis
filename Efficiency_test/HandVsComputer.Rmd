@@ -1,0 +1,87 @@
+---
+title: "Untitled"
+author: "MATTEO CAROULLE"
+date: "2023-08-08"
+output: html_document
+---
+
+```{r}
+######################################################
+library(ggplot2) #plot making
+#library(multicomp) #allow to do multicomparison
+library(agricolae) #load TukeyHSD package 
+library(dplyr)
+library(tidyr)
+library(gridExtra)
+# Libraries
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+######################################################
+
+df = read.table("Hand vs Computer.csv", stringsAsFactors = TRUE, sep = ";", na.strings = c("NA",""), header = TRUE)
+df$PLANT<- as.factor(as.character(df$PLANT))
+df$RADIUS<- as.numeric(as.character(df$RADIUS))
+df$METHOD<- as.factor(as.character(df$METHOD))
+
+
+x_label<-c('lhp 1-3','trb 1-2 lhp 1-3/4','trb 1-2 lhp 1-3','trb 2-3 lhp 1-3/4','trb 2-3 lhp 1-4','trb 3-1 lhp 1-3','trb 3-2 lhp 1-3','trb 1-2 trb 2-3 lhp 1-3','trb 1-2 trb 2-3 lhp 1-3/4','trb 1-2 trb 3-2 lhp 1-3')
+
+plot<- ggplot(df, aes(x=LINE, y=RADIUS, fill=METHOD)) + 
+    geom_boxplot()+
+    scale_x_discrete(limits = x_label)+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggsave("Hand_Vs_Computer.tiff", plot, width = 30, height = 15, units = "cm", dpi = 1200)
+```
+
+
+
+```{r}
+library(tidyverse)
+library(ggpubr)
+library(rstatix)
+
+# Build the linear model
+model  <- lm(RADIUS ~ LINE*METHOD,
+             data = df)
+# Create a QQ plot of residuals
+ggqqplot(residuals(model))
+```
+```{r}
+# Compute Shapiro-Wilk test of normality
+shapiro_test(residuals(model))
+
+df %>%
+  group_by(LINE, METHOD) %>%
+  shapiro_test(RADIUS)
+
+ggqqplot(df, "RADIUS", ggtheme = theme_bw()) +
+  facet_grid(METHOD ~ LINE)
+```
+```{r}
+#test of the innteraction
+res.aov <- df %>% anova_test(RADIUS ~ LINE * METHOD)
+res.aov
+```
+```{r}
+# Group the data by gender and fit  anova
+model <- lm(RADIUS ~ LINE * METHOD, data = df)
+df%>%
+  group_by(LINE) %>%
+  anova_test(RADIUS ~ METHOD, error = model)
+```
+
+
+
+
+```{r}
+# pairwise comparisons
+library(emmeans)
+pwc <- df %>% 
+  group_by(LINE) %>%
+  emmeans_test(RADIUS ~ METHOD, p.adjust.method = "bonferroni") 
+pwc
+```
+
+
