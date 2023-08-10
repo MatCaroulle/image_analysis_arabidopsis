@@ -1,0 +1,16 @@
+name: PLLLLLL
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.8
+  - opencv
+  - numpy
+  - matplotlib
+  - pandas
+  - scikit-image
+  - scipy
+  - ipykernel
+  - discorpy
