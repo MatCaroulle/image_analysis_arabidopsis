@@ -18,3 +18,6 @@ Welcome to the PhenoLeaf Segmentation project! This repository contains Python a
 - **picture_data_base**: This folder contains images you can pick to use/test the code.
   
 - **Efficiency_test**: This folder contains data retaled to a test of the algorithm and R code to analyse its performances.
+
+
+## Prerequisites
