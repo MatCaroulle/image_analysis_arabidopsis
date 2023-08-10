@@ -21,3 +21,15 @@ Welcome to the PhenoLeaf Segmentation project! This repository contains Python a
 
 
 ## Prerequisites
+
+  - python=3.8
+  - opencv
+  - numpy
+  - matplotlib
+  - pandas
+  - scikit-image
+  - scipy
+  - ipykernel
+
+  For pre-processing only : 
+  - discorpy
