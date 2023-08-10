@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Hand_Vs_Computer_PhenoLeaf_efficiency_test"
 author: "MATTEO CAROULLE"
 date: "2023-08-08"
 output: html_document
@@ -7,16 +7,10 @@ output: html_document
 
 ```{r}
 ######################################################
-library(ggplot2) #plot making
-#library(multicomp) #allow to do multicomparison
-library(agricolae) #load TukeyHSD package 
+library(ggplot2)
 library(dplyr)
 library(tidyr)
-library(gridExtra)
-# Libraries
-library(tidyverse)
-library(hrbrthemes)
-library(viridis)
+library(emmeans)
 ######################################################
 
 df = read.table("Hand vs Computer.csv", stringsAsFactors = TRUE, sep = ";", na.strings = c("NA",""), header = TRUE)
@@ -35,19 +29,14 @@ plot<- ggplot(df, aes(x=LINE, y=RADIUS, fill=METHOD)) +
 ggsave("Hand_Vs_Computer.tiff", plot, width = 30, height = 15, units = "cm", dpi = 1200)
 ```
 
-
-
 ```{r}
-library(tidyverse)
-library(ggpubr)
-library(rstatix)
-
 # Build the linear model
 model  <- lm(RADIUS ~ LINE*METHOD,
              data = df)
 # Create a QQ plot of residuals
 ggqqplot(residuals(model))
 ```
+
 ```{r}
 # Compute Shapiro-Wilk test of normality
 shapiro_test(residuals(model))
@@ -59,11 +48,13 @@ df %>%
 ggqqplot(df, "RADIUS", ggtheme = theme_bw()) +
   facet_grid(METHOD ~ LINE)
 ```
+
 ```{r}
 #test of the innteraction
 res.aov <- df %>% anova_test(RADIUS ~ LINE * METHOD)
 res.aov
 ```
+
 ```{r}
 # Group the data by gender and fit  anova
 model <- lm(RADIUS ~ LINE * METHOD, data = df)
@@ -72,12 +63,8 @@ df%>%
   anova_test(RADIUS ~ METHOD, error = model)
 ```
 
-
-
-
 ```{r}
 # pairwise comparisons
-library(emmeans)
 pwc <- df %>% 
   group_by(LINE) %>%
   emmeans_test(RADIUS ~ METHOD, p.adjust.method = "bonferroni") 
