@@ -4,7 +4,7 @@
 
 ![Plant Rosette](Logo_PL.png)
 
-Welcome to the PhenoLeaf Segmentation project! This repository contains Python and Bash code as well as Bash scripts to perform image segmentation and automatically measure the radius of a plant's rosette.
+Welcome to the PhenoLeaf Segmentation project! This repository contains Python and Jupyter Notebook as well as Bash scripts to perform image segmentation and automatically measure the radius of a plant's rosette.
 
 ## Features
 
